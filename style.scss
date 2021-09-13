@@ -1,0 +1,157 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  } //600px
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  } //900px
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  } //1200px
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem=10px;
+
+  @include respond(tab-land) {
+    // width<1200?
+    font-size: 56.25%; //1rem=9px; 9/16*100=56.25%
+  }
+
+  @include respond(tab-port) {
+    // width<900?
+    font-size: 50%; //1rem=8px; 8/16*100=50%
+  }
+
+  @include respond(phone) {
+    // width<600?
+    font-size: 50%; //1rem=8px; 8/16*100=50%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  background: #131419;
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.container {
+  text-transform: uppercase;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+
+    .reset {
+      cursor: pointer;
+      user-select: none;
+      background-image: linear-gradient(
+        225deg,
+        #ff3cac 0%,
+        #784ba0 50%,
+        #2b86c5 100%
+      );
+      grid-column: 1/-1;
+      padding: 3rem 6rem;
+      margin: 2rem;
+      border-radius: 10px;
+      font-size: 2.5rem;
+      transition: 0.2s transform ease-in-out;
+
+      &:hover {
+        transform: scale(1.02);
+
+        @include respond(tab-land) {
+          transform: none;
+        }
+      }
+    }
+
+    .counter {
+      border-radius: 10px;
+      background-color: #ff3cac;
+      background-image: linear-gradient(
+        225deg,
+        #ff3cac 0%,
+        #784ba0 50%,
+        #2b86c5 100%
+      );
+      color: #fff;
+      font-size: 4rem;
+      padding: 3.8rem;
+    }
+
+    .decrement,
+    .increment {
+      cursor: pointer;
+      user-select: none;
+      color: #fff;
+      transition: 0.2s background-size ease-in-out, 0.2s transform ease-in-out;
+      border-radius: 10px;
+      padding: 2.5rem;
+      font-size: 2rem;
+      margin: 5px 10px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+
+      &:hover,
+      &:hover {
+        transform: scale(1.05);
+        background-size: 300%;
+
+        @include respond(tab-land) {
+          transform: none;
+          background-size: 100%;
+        }
+      }
+    }
+
+    .decrement {
+      background-color: #f96c01;
+      background-image: linear-gradient(130deg, transparent 53%, #fca510 53%);
+      background-position: right;
+      justify-self: end;
+      align-self: end;
+
+      @include respond(tab-land) {
+        background-image: linear-gradient(130deg, #f96c01 40%, #fca510 53%);
+      }
+    }
+    .increment {
+      background-color: #fca510;
+      background-image: linear-gradient(130deg, #f96c01 53%, transparent 53%);
+      justify-self: start;
+      align-self: end;
+
+      @include respond(tab-land) {
+        background-image: linear-gradient(130deg, #f96c01 40%, #fca510 53%);
+      }
+    }
+  }
+}

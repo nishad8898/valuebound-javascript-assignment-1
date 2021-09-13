@@ -1,0 +1,30 @@
+{
+  "name": "valuebound-javascript-assignment-1",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://nishad8898.github.io/valuebound-javascript-assignment-1",
+  "main": "script.js",
+  "scripts": {
+    "clear:build": "del-cli ./build/* ",
+    "copy:build": "copyfiles index.html style.css script.js ./build",
+    "predeploy": "npm-run-all clear:build copy:build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishad8898/valuebound-javascript-assignment-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishad8898/valuebound-javascript-assignment-1/issues"
+  },
+  "homepage": "https://github.com/nishad8898/valuebound-javascript-assignment-1#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "del-cli": "^4.0.1",
+    "gh-pages": "^3.2.3",
+    "npm-run-all": "^4.1.5"
+  }
+}
