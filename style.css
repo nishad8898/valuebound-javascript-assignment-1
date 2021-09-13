@@ -1,0 +1,180 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  background: #131419;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  text-transform: uppercase;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.container .main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .main .reset {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  grid-column: 1/-1;
+  padding: 3rem 6rem;
+  margin: 2rem;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  -webkit-transition: 0.2s -webkit-transform ease-in-out;
+  transition: 0.2s -webkit-transform ease-in-out;
+  transition: 0.2s transform ease-in-out;
+  transition: 0.2s transform ease-in-out, 0.2s -webkit-transform ease-in-out;
+}
+
+.container .main .reset:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+@media only screen and (max-width: 75em) {
+  .container .main .reset:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.container .main .counter {
+  border-radius: 10px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  color: #fff;
+  font-size: 4rem;
+  padding: 3.8rem;
+}
+
+.container .main .decrement,
+.container .main .increment {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #fff;
+  -webkit-transition: 0.2s background-size ease-in-out, 0.2s -webkit-transform ease-in-out;
+  transition: 0.2s background-size ease-in-out, 0.2s -webkit-transform ease-in-out;
+  transition: 0.2s background-size ease-in-out, 0.2s transform ease-in-out;
+  transition: 0.2s background-size ease-in-out, 0.2s transform ease-in-out, 0.2s -webkit-transform ease-in-out;
+  border-radius: 10px;
+  padding: 2.5rem;
+  font-size: 2rem;
+  margin: 5px 10px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container .main .decrement:hover, .container .main .decrement:hover,
+.container .main .increment:hover,
+.container .main .increment:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-size: 300%;
+}
+
+@media only screen and (max-width: 75em) {
+  .container .main .decrement:hover, .container .main .decrement:hover,
+  .container .main .increment:hover,
+  .container .main .increment:hover {
+    -webkit-transform: none;
+            transform: none;
+    background-size: 100%;
+  }
+}
+
+.container .main .decrement {
+  background-color: #f96c01;
+  background-image: linear-gradient(130deg, transparent 53%, #fca510 53%);
+  background-position: right;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+@media only screen and (max-width: 75em) {
+  .container .main .decrement {
+    background-image: linear-gradient(130deg, #f96c01 40%, #fca510 53%);
+  }
+}
+
+.container .main .increment {
+  background-color: #fca510;
+  background-image: linear-gradient(130deg, #f96c01 53%, transparent 53%);
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+@media only screen and (max-width: 75em) {
+  .container .main .increment {
+    background-image: linear-gradient(130deg, #f96c01 40%, #fca510 53%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
